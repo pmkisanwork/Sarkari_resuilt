@@ -4,1283 +4,1093 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Work Online Result 2026</title>
-
 <style>
-  :root {
-    --saffron: #FF6B00;
-    --deep-orange: #E85D04;
-    --navy: #0B1F3A;
-    --dark: #0D0D1A;
-    --gold: #FFB703;
-    --green: #06D6A0;
-    --light: #F8F9FA;
-    --card-bg: #FFFFFF;
-    --text-muted: #6B7280;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: Arial, sans-serif;
-    background: #F0F4FF;
-    color: var(--dark);
-    overflow-x: hidden;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 60%, #0B2F5A 100%);
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-
-  .top-bar {
-    background: var(--saffron);
-    text-align: center;
-    padding: 6px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-    letter-spacing: 0.5px;
-    animation: pulse-bar 2s infinite;
-  }
-
-  @keyframes pulse-bar {
-    0%, 100% { background: var(--saffron); }
-    50% { background: var(--deep-orange); }
-  }
-
-  .header-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 40px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .logo-icon {
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, var(--saffron), var(--gold));
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    box-shadow: 0 4px 15px rgba(255,107,0,0.4);
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-
-  .logo-text h1 {
-    font-family: Arial, sans-serif;
-    color: white;
-    font-size: 22px;
-    font-weight: 800;
-    line-height: 1;
-  }
-
-  .logo-text span {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-  }
-
-  nav {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 7px 14px;
-    border-radius: 20px;
-    transition: all 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  nav a:hover, nav a.active {
-    background: var(--saffron);
-    color: white;
-    border-color: var(--saffron);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255,107,0,0.4);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #153060 50%, #1a1a4e 100%);
-    padding: 60px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px; left: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,107,0,0.15), transparent);
-    border-radius: 50%;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,183,3,0.1), transparent);
-    border-radius: 50%;
-  }
-
-  .hero h2 {
-    font-family: Arial, sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero h2 span { color: var(--gold); }
-
-  .hero p {
-    color: rgba(255,255,255,0.7);
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .search-box {
-    display: flex;
-    max-width: 540px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    border-radius: 50px;
-    overflow: hidden;
-  }
-
-  .search-box input {
-    flex: 1;
-    padding: 16px 24px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    background: white;
-  }
-
-  .search-box button {
-    padding: 16px 28px;
-    background: linear-gradient(135deg, var(--saffron), var(--gold));
-    border: none;
-    color: white;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    transition: all 0.3s;
-  }
-
-  .search-box button:hover {
-    background: linear-gradient(135deg, var(--deep-orange), var(--saffron));
-  }
-
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-
-  .stat-item {
-    text-align: center;
-    color: white;
-  }
-
-  .stat-item .num {
-    font-family: Arial, sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--gold);
-  }
-
-  .stat-item .label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  /* ── LIVE TICKER ── */
-  .ticker {
-    background: var(--dark);
-    padding: 12px 0;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .ticker-label {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    background: var(--saffron);
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    font-weight: 700;
-    font-size: 13px;
-    z-index: 2;
-    gap: 6px;
-  }
-
-  .ticker-dot {
-    width: 8px; height: 8px;
-    background: white;
-    border-radius: 50%;
-    animation: blink 1s infinite;
-  }
-
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-  .ticker-track {
-    display: flex;
-    gap: 60px;
-    animation: scroll-left 40s linear infinite;
-    padding-left: 130px;
-    white-space: nowrap;
-  }
-
-  .ticker-track span {
-    color: rgba(255,255,255,0.85);
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .ticker-track span::before {
-    content: '🔔 ';
-  }
-
-  @keyframes scroll-left {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* ── MAIN GRID ── */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  .section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .section-title h3 {
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--navy);
-  }
-
-  .section-title .badge {
-    background: linear-gradient(135deg, var(--saffron), var(--gold));
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .section-title .line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, var(--saffron), transparent);
-  }
-
-  /* ── CATEGORY BUTTONS ── */
-  .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-
-  .cat-card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px 16px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--navy);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: all 0.3s;
-    border: 2px solid transparent;
-    cursor: pointer;
-  }
-
-  .cat-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--saffron);
-    box-shadow: 0 12px 30px rgba(255,107,0,0.15);
-  }
-
-  .cat-card .icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .cat-card .name {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-  }
-
-  .cat-card .count {
-    font-size: 12px;
-    color: var(--saffron);
-    font-weight: 600;
-    margin-top: 4px;
-  }
-
-  /* ── MAIN CONTENT + SIDEBAR ── */
-  .main-layout {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 30px;
-  }
-
-  @media (max-width: 900px) {
-    .main-layout { grid-template-columns: 1fr; }
-  }
-
-  /* ── JOB CARDS ── */
-  .jobs-list { display: flex; flex-direction: column; gap: 14px; }
-
-  .job-card {
-    background: white;
-    border-radius: 16px;
-    padding: 18px 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s;
-    border-left: 4px solid transparent;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .job-card:hover {
-    transform: translateX(6px);
-    border-left-color: var(--saffron);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-
-  .job-card.new { border-left-color: var(--green); }
-  .job-card.hot { border-left-color: var(--saffron); }
-
-  .job-icon {
-    width: 48px; height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  .job-icon.gov { background: #EEF2FF; }
-  .job-icon.rail { background: #FFF3E0; }
-  .job-icon.bank { background: #E8F5E9; }
-  .job-icon.army { background: #FCE4EC; }
-
-  .job-info { flex: 1; }
-
-  .job-info h4 {
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-    line-height: 1.3;
-  }
-
-  .job-meta {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-
-  .job-meta span { display: flex; align-items: center; gap: 4px; }
-
-  .tag {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    flex-shrink: 0;
-  }
-
-  .tag.new { background: #D1FAE5; color: #065F46; }
-  .tag.hot { background: #FFE4CC; color: #C04E00; }
-  .tag.soon { background: #E0E7FF; color: #3730A3; }
-  .tag.out { background: #FEE2E2; color: #991B1B; }
-
-  /* ── ONLINE WORK SECTION ── */
-  .online-section {
-    background: linear-gradient(135deg, #0B1F3A 0%, #1a3a6e 100%);
-    padding: 60px 40px;
-    margin: 40px 0;
-    border-radius: 24px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .online-section::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(255,183,3,0.08), transparent);
-    border-radius: 50%;
-  }
-
-  .online-title {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .online-title h3 {
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 8px;
-  }
-
-  .online-title h3 span { color: var(--gold); }
-
-  .online-title p {
-    color: rgba(255,255,255,0.6);
-    font-size: 15px;
-  }
-
-  .companies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .company-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 20px 16px;
-    text-align: center;
-    transition: all 0.3s;
-    cursor: pointer;
-  }
-
-  .company-card:hover {
-    background: rgba(255,107,0,0.15);
-    border-color: var(--saffron);
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(255,107,0,0.2);
-  }
-
-  .company-logo {
-    width: 56px; height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    margin: 0 auto 12px;
-  }
-
-  .company-name {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 4px;
-  }
-
-  .company-type {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .company-earn {
-    margin-top: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gold);
-    background: rgba(255,183,3,0.1);
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-block;
-  }
-
-  /* ── SIDEBAR ── */
-  .sidebar { display: flex; flex-direction: column; gap: 24px; }
-
-  .sidebar-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-  }
-
-  .sidebar-header {
-    background: linear-gradient(135deg, var(--navy), #1a3a6e);
-    color: white;
-    padding: 14px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .sidebar-list { padding: 12px; }
-
-  .sidebar-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 8px;
-    border-bottom: 1px solid #F3F4F6;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .sidebar-item:last-child { border-bottom: none; }
-
-  .sidebar-item:hover {
-    background: #FFF7EE;
-  }
-
-  .sidebar-item .dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
-
-  .dot-orange { background: var(--saffron); }
-  .dot-green { background: var(--green); }
-  .dot-blue { background: #3B82F6; }
-  .dot-red { background: #EF4444; }
-
-  .sidebar-item p {
-    font-size: 13px;
-    color: var(--navy);
-    font-weight: 500;
-    line-height: 1.4;
-  }
-
-  .sidebar-item .meta {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.7);
-    padding: 50px 40px 30px;
-    margin-top: 60px;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 40px;
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .header-main { padding: 14px 20px; }
-    .hero { padding: 40px 20px; }
-    .hero h2 { font-size: 28px; }
-    .online-section { padding: 40px 20px; }
-  }
-
-  .footer-brand h3 {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 10px;
-  }
-
-  .footer-brand p {
-    font-size: 13px;
-    line-height: 1.7;
-    max-width: 280px;
-  }
-
-  .footer-col h4 {
-    font-family: Arial, sans-serif;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    position: relative;
-    padding-bottom: 10px;
-  }
-
-  .footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 30px; height: 2px;
-    background: var(--saffron);
-  }
-
-  .footer-col a {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 13px;
-    margin-bottom: 8px;
-    transition: color 0.2s;
-  }
-
-  .footer-col a:hover { color: var(--gold); }
-
-  .footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: gap;
-    font-size: 12px;
-  }
-
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 30px; right: 30px;
-    background: #25D366;
-    color: white;
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-    z-index: 1000;
-    cursor: pointer;
-    animation: float 3s ease-in-out infinite;
-    text-decoration: none;
-  }
+/* ═══════════════════════════════════════
+   GLOBAL
+═══════════════════════════════════════ */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:Arial,sans-serif; background:#F0F4FF; color:#0D0D1A; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+
+/* ═══════════════════════════════════════
+   PAGE SECTIONS (show/hide)
+═══════════════════════════════════════ */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+header {
+  background:#0B1F3A;
+  position:sticky; top:0; z-index:200;
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+.top-bar {
+  background:#FF6B00; text-align:center;
+  padding:6px 20px; font-size:13px; font-weight:bold; color:white;
+}
+.header-main {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 30px; flex-wrap:wrap; gap:10px;
+}
+.logo { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.logo-icon {
+  width:48px; height:48px; background:#FF6B00; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+}
+.logo-text h1 { color:white; font-size:20px; }
+.logo-text span { color:#FFB703; font-size:12px; }
+nav { display:flex; gap:6px; flex-wrap:wrap; }
+nav a {
+  color:rgba(255,255,255,.85); font-size:13px; font-weight:bold;
+  padding:6px 12px; border-radius:20px; border:1px solid rgba(255,255,255,.15);
+  transition:.2s; cursor:pointer;
+}
+nav a:hover, nav a.active { background:#FF6B00; color:white; border-color:#FF6B00; }
+
+/* ═══════════════════════════════════════
+   TICKER
+═══════════════════════════════════════ */
+.ticker {
+  background:#0D0D1A; padding:10px 0; overflow:hidden;
+  position:relative; height:36px;
+}
+.ticker-label {
+  position:absolute; left:0; top:0; bottom:0;
+  background:#FF6B00; color:white; display:flex; align-items:center;
+  padding:0 16px; font-weight:bold; font-size:12px; z-index:2; gap:6px;
+}
+.ticker-dot { width:7px; height:7px; background:white; border-radius:50%; animation:blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.ticker-wrap {
+  overflow:hidden; position:absolute; left:90px; right:0; top:0; bottom:0;
+  display:flex; align-items:center;
+}
+.ticker-track { display:flex; gap:60px; animation:scroll-left 45s linear infinite; white-space:nowrap; }
+.ticker-track span { color:rgba(255,255,255,.85); font-size:13px; }
+@keyframes scroll-left { 0%{transform:translateX(100vw)} 100%{transform:translateX(-100%)} }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  background:linear-gradient(135deg,#0B1F3A,#1a3a6e);
+  padding:50px 30px; text-align:center;
+}
+.hero h2 { font-size:32px; color:white; margin-bottom:10px; }
+.hero h2 span { color:#FFB703; }
+.hero p { color:rgba(255,255,255,.7); font-size:15px; margin-bottom:24px; }
+.search-box {
+  display:flex; max-width:520px; margin:0 auto 24px;
+  border-radius:40px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+.search-box input {
+  flex:1; padding:14px 20px; border:none; outline:none;
+  font-size:14px; font-family:Arial,sans-serif;
+}
+.search-box button {
+  padding:14px 24px; background:#FF6B00; border:none;
+  color:white; font-weight:bold; font-size:14px; cursor:pointer;
+}
+.stats-row { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+.stat-item .num { font-size:26px; font-weight:bold; color:#FFB703; }
+.stat-item .label { font-size:11px; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:1px; }
+
+/* ═══════════════════════════════════════
+   STATUS BAR
+═══════════════════════════════════════ */
+.status-bar {
+  background:white; border-bottom:2px solid #eee;
+  padding:10px 30px; display:flex; align-items:center;
+  gap:16px; font-size:13px; flex-wrap:wrap;
+}
+.auto-badge { background:#D1FAE5; color:#065F46; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold; }
+.status-bar .info { color:#666; }
+.status-bar .info strong { color:#FF6B00; }
+.last-update { color:#888; font-size:12px; margin-left:auto; }
+
+/* ═══════════════════════════════════════
+   CONTAINER
+═══════════════════════════════════════ */
+.container { max-width:1200px; margin:0 auto; padding:30px 20px; }
+
+.section-title { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+.section-title h3 { font-size:20px; font-weight:bold; color:#0B1F3A; }
+.section-title .badge {
+  background:#FF6B00; color:white; font-size:11px; font-weight:bold;
+  padding:3px 10px; border-radius:20px; text-transform:uppercase;
+}
+.section-title .line { flex:1; height:2px; background:linear-gradient(to right,#FF6B00,transparent); }
+
+/* ═══════════════════════════════════════
+   CATEGORIES
+═══════════════════════════════════════ */
+.categories {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:12px; margin-bottom:30px;
+}
+.cat-card {
+  background:white; border-radius:12px; padding:16px 12px; text-align:center;
+  cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.05);
+  transition:.2s; border:2px solid transparent;
+}
+.cat-card:hover,.cat-card.active {
+  border-color:#FF6B00; transform:translateY(-4px);
+  box-shadow:0 8px 20px rgba(255,107,0,.12);
+}
+.cat-card .icon { font-size:26px; margin-bottom:6px; display:block; }
+.cat-card .name { font-size:13px; font-weight:bold; color:#0B1F3A; }
+.cat-card .count { font-size:11px; color:#FF6B00; font-weight:bold; margin-top:3px; }
+
+/* ═══════════════════════════════════════
+   FILTER TABS
+═══════════════════════════════════════ */
+.filter-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.filter-tab {
+  padding:7px 16px; border:2px solid #ddd; border-radius:20px;
+  font-size:13px; font-weight:bold; cursor:pointer; background:white; transition:.2s;
+}
+.filter-tab:hover,.filter-tab.active { background:#FF6B00; color:white; border-color:#FF6B00; }
+
+/* ═══════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════ */
+.main-layout { display:grid; grid-template-columns:1fr 300px; gap:28px; }
+@media(max-width:900px){ .main-layout{grid-template-columns:1fr;} }
+
+/* ═══════════════════════════════════════
+   JOB CARDS
+═══════════════════════════════════════ */
+.jobs-list { display:flex; flex-direction:column; gap:12px; }
+.job-card {
+  background:white; border-radius:12px; padding:16px 18px;
+  display:flex; align-items:center; gap:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06); transition:.2s;
+  border-left:4px solid #ddd; cursor:pointer;
+}
+.job-card:hover { transform:translateX(5px); box-shadow:0 6px 20px rgba(0,0,0,.1); }
+.job-card.tag-HOT  { border-left-color:#FF6B00; }
+.job-card.tag-NEW  { border-left-color:#06D6A0; }
+.job-card.tag-SOON { border-left-color:#3B82F6; }
+.job-card.tag-OUT  { border-left-color:#EF4444; }
+.job-icon {
+  width:46px; height:46px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; flex-shrink:0; background:#F3F4F6;
+}
+.job-info { flex:1; min-width:0; }
+.job-info h4 { font-size:14px; font-weight:bold; color:#0B1F3A; margin-bottom:5px; line-height:1.4; }
+.job-meta { display:flex; gap:12px; flex-wrap:wrap; font-size:12px; color:#6B7280; }
+.job-days {
+  font-size:11px; font-weight:bold; color:white;
+  padding:2px 8px; border-radius:10px; background:#FF6B00; white-space:nowrap;
+}
+.job-days.urgent { background:#EF4444; animation:pulse 1.5s infinite; }
+.job-days.safe   { background:#06D6A0; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.6} }
+.tag { font-size:11px; font-weight:bold; padding:3px 10px; border-radius:20px; flex-shrink:0; }
+.tag-HOT-l  { background:#FFE4CC; color:#C04E00; }
+.tag-NEW-l  { background:#D1FAE5; color:#065F46; }
+.tag-SOON-l { background:#E0E7FF; color:#3730A3; }
+.tag-OUT-l  { background:#FEE2E2; color:#991B1B; }
+
+/* ═══════════════════════════════════════
+   EMPTY / LOADING
+═══════════════════════════════════════ */
+.empty-state { background:white; border-radius:12px; padding:40px; text-align:center; color:#999; }
+.empty-state .big { font-size:40px; margin-bottom:12px; }
+.loading { text-align:center; padding:30px; color:#999; font-size:14px; }
+.spinner {
+  display:inline-block; width:22px; height:22px;
+  border:3px solid #eee; border-top-color:#FF6B00;
+  border-radius:50%; animation:spin .8s linear infinite; vertical-align:middle; margin-right:6px;
+}
+@keyframes spin{ to{transform:rotate(360deg)} }
+
+/* ═══════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════ */
+.sidebar { display:flex; flex-direction:column; gap:20px; }
+.sidebar-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+.sidebar-header { background:#0B1F3A; color:white; padding:12px 18px; font-size:14px; font-weight:bold; }
+.sidebar-list { padding:10px; }
+.sidebar-item {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:9px 8px; border-bottom:1px solid #F3F4F6;
+  cursor:pointer; border-radius:8px; transition:background .2s;
+}
+.sidebar-item:last-child { border-bottom:none; }
+.sidebar-item:hover { background:#FFF7EE; }
+.dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+.dot-o { background:#FF6B00; } .dot-g { background:#06D6A0; }
+.dot-b { background:#3B82F6; } .dot-r { background:#EF4444; }
+.sidebar-item p { font-size:13px; color:#0B1F3A; font-weight:500; line-height:1.4; }
+.sidebar-item .meta { font-size:11px; color:#9CA3AF; margin-top:2px; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer { background:#0D0D1A; color:rgba(255,255,255,.65); padding:40px 30px 24px; margin-top:50px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:30px; max-width:1200px; margin:0 auto 30px; }
+@media(max-width:768px){ .footer-grid{grid-template-columns:1fr;} }
+.footer-brand h3 { color:white; font-size:18px; margin-bottom:10px; }
+.footer-brand p { font-size:13px; line-height:1.7; }
+.footer-col h4 { color:white; font-size:14px; font-weight:bold; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid #FF6B00; display:inline-block; }
+.footer-col a { display:block; color:rgba(255,255,255,.55); font-size:13px; margin-bottom:7px; }
+.footer-col a:hover { color:#FFB703; }
+.footer-bottom { max-width:1200px; margin:0 auto; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; font-size:12px; flex-wrap:wrap; gap:8px; }
+.footer-bottom a { color:#FFB703; }
+
+/* ═══════════════════════════════════════
+   ADMIN FLOAT BUTTON
+═══════════════════════════════════════ */
+.admin-float {
+  position:fixed; bottom:100px; right:28px;
+  background:#0B1F3A; color:white; padding:12px 18px;
+  border-radius:30px; font-size:13px; font-weight:bold;
+  box-shadow:0 4px 15px rgba(0,0,0,.3); z-index:1000; cursor:pointer;
+  border:none; font-family:Arial,sans-serif; transition:.2s;
+}
+.admin-float:hover { background:#FF6B00; }
+.whatsapp-btn {
+  position:fixed; bottom:30px; right:28px;
+  background:#25D366; color:white; width:54px; height:54px;
+  border-radius:50%; display:flex; align-items:center;
+  justify-content:center; font-size:26px; box-shadow:0 4px 15px rgba(37,211,102,.4); z-index:1000;
+}
+
+/* ═══════════════════════════════════════
+   ADMIN PANEL
+═══════════════════════════════════════ */
+#adminPage { background:#F0F4FF; min-height:100vh; }
+
+.admin-topbar {
+  background:#0B1F3A; padding:16px 30px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+.admin-topbar h1 { color:white; font-size:18px; }
+.admin-topbar span { color:#FFB703; font-size:12px; }
+
+.admin-stats {
+  background:white; display:flex; gap:0;
+  border-bottom:2px solid #eee; flex-wrap:wrap;
+}
+.stat-box { padding:16px 28px; border-right:1px solid #eee; min-width:120px; }
+.stat-box .num { font-size:26px; font-weight:bold; color:#FF6B00; }
+.stat-box .lbl { font-size:12px; color:#888; margin-top:2px; }
+
+.admin-container { max-width:1200px; margin:0 auto; padding:24px 20px; }
+
+.alert-box {
+  padding:12px 18px; border-radius:8px; margin-bottom:16px;
+  font-size:14px; font-weight:bold; display:none;
+}
+.alert-box.ok  { background:#D1FAE5; color:#065F46; display:block; }
+.alert-box.err { background:#FEE2E2; color:#991B1B; display:block; }
+.alert-box.inf { background:#E0E7FF; color:#3730A3; display:block; }
+
+/* PASSWORD SCREEN */
+.pw-screen {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,#0B1F3A,#1a3a6e);
+}
+.pw-card {
+  background:white; border-radius:16px; padding:40px;
+  width:360px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.pw-card .lock { font-size:48px; margin-bottom:16px; }
+.pw-card h2 { font-size:20px; color:#0B1F3A; margin-bottom:6px; }
+.pw-card p { font-size:13px; color:#888; margin-bottom:24px; }
+.pw-card input {
+  width:100%; padding:12px 16px; border:2px solid #E5E7EB; border-radius:8px;
+  font-size:15px; font-family:Arial,sans-serif; outline:none; margin-bottom:12px;
+  text-align:center; letter-spacing:3px;
+}
+.pw-card input:focus { border-color:#FF6B00; }
+.pw-card .err-msg { color:#EF4444; font-size:13px; margin-bottom:8px; display:none; }
+
+/* FORM CARD */
+.form-card {
+  background:white; border-radius:14px; padding:24px;
+  margin-bottom:24px; box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+.form-card h2 { font-size:17px; font-weight:bold; color:#0B1F3A; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid #FF6B00; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:700px){ .form-grid{grid-template-columns:1fr;} }
+.form-group { display:flex; flex-direction:column; gap:5px; }
+.form-group.full { grid-column:1/-1; }
+.form-group label { font-size:13px; font-weight:bold; color:#374151; }
+.form-group input,.form-group select,.form-group textarea {
+  padding:10px 12px; border:2px solid #E5E7EB; border-radius:8px;
+  font-size:14px; font-family:Arial,sans-serif; outline:none; transition:.2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:#FF6B00; }
+.form-actions { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
+
+/* BUTTONS */
+.btn { padding:9px 18px; border:none; border-radius:8px; font-size:13px; font-weight:bold; cursor:pointer; transition:.2s; font-family:Arial,sans-serif; }
+.btn:hover { opacity:.88; }
+.btn-o  { background:#FF6B00; color:white; }
+.btn-n  { background:#0B1F3A; color:white; }
+.btn-g  { background:#06D6A0; color:#065F46; }
+.btn-r  { background:#EF4444; color:white; }
+.btn-b  { background:#3B82F6; color:white; }
+.btn-sm { padding:5px 12px; font-size:12px; }
+
+/* TABLE */
+.table-card { background:white; border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+.table-header { padding:16px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid #eee; flex-wrap:wrap; gap:10px; }
+.table-header h2 { font-size:17px; font-weight:bold; color:#0B1F3A; }
+.search-filter { display:flex; gap:8px; flex-wrap:wrap; }
+.search-filter input,.search-filter select { padding:7px 12px; border:2px solid #E5E7EB; border-radius:8px; font-size:13px; font-family:Arial,sans-serif; outline:none; }
+table { width:100%; border-collapse:collapse; }
+thead tr { background:#F9FAFB; }
+th { padding:12px 16px; text-align:left; font-size:11px; font-weight:bold; color:#6B7280; text-transform:uppercase; letter-spacing:.5px; border-bottom:2px solid #eee; }
+td { padding:11px 16px; font-size:13px; color:#374151; border-bottom:1px solid #F3F4F6; vertical-align:middle; }
+tr:hover td { background:#FFFBF5; }
+.days-badge { display:inline-block; padding:3px 9px; border-radius:12px; font-size:11px; font-weight:bold; }
+.d-exp { background:#FEE2E2; color:#991B1B; }
+.d-urg { background:#FFF3CD; color:#856404; }
+.d-ok  { background:#D1FAE5; color:#065F46; }
+.pill  { display:inline-block; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold; }
+.p-HOT  { background:#FFE4CC; color:#C04E00; }
+.p-NEW  { background:#D1FAE5; color:#065F46; }
+.p-SOON { background:#E0E7FF; color:#3730A3; }
+.p-OUT  { background:#FEE2E2; color:#991B1B; }
+.action-btns { display:flex; gap:6px; }
+.no-data { padding:40px; text-align:center; color:#9CA3AF; font-size:14px; }
+.no-data .big { font-size:36px; margin-bottom:10px; }
+
+/* TOOLS ROW */
+.tools-row { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; align-items:center; }
+.tools-info { font-size:13px; color:#888; margin-left:auto; }
+
+/* MODAL */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:999; align-items:center; justify-content:center; }
+.modal-overlay.open { display:flex; }
+.modal { background:white; border-radius:16px; padding:28px; width:90%; max-width:560px; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.2); }
+.modal h2 { font-size:18px; margin-bottom:16px; color:#0B1F3A; }
+.modal .close-x { float:right; background:none; border:none; font-size:20px; cursor:pointer; color:#888; margin-top:-4px; }
+.json-box { background:#F9FAFB; border:2px solid #E5E7EB; border-radius:8px; padding:14px; font-family:monospace; font-size:12px; width:100%; height:240px; resize:vertical; outline:none; }
+.json-box:focus { border-color:#FF6B00; }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<header>
-  <div class="top-bar">
-    🇮🇳 All Work Online Result 2026 – सरकारी नौकरी की सबसे भरोसेमंद वेबसाइट | Latest Govt Jobs, Results, Admit Cards
-  </div>
-  <div class="header-main">
-    <div class="logo">
-      <a href="https://sarkariresult.com.cm/" target="_blank" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
+<!-- ████████████████████████████████████
+     WEBSITE PAGE
+████████████████████████████████████ -->
+<div id="mainPage" class="page active">
+
+  <header>
+    <div class="top-bar">🇮🇳 All Work Online Result 2026 – Govt Jobs, Results, Admit Cards – Auto Updated Daily</div>
+    <div class="header-main">
+      <div class="logo" onclick="goHome()">
         <div class="logo-icon">📋</div>
         <div class="logo-text">
           <h1>All Work Online Result</h1>
-          <span style="color:#FFB703;">🔗 sarkariresult.com.cm</span>
+          <span>🔗 sarkariresult.com.cm</span>
         </div>
-      </a>
+      </div>
+      <nav>
+        <a onclick="goHome()" class="active" id="nav-home">🏠 Home</a>
+        <a href="#jobs">💼 Latest Jobs</a>
+        <a href="#results">🏆 Results</a>
+        <a href="#admitcard">🪪 Admit Card</a>
+        <a href="#answerkey">🔑 Answer Key</a>
+        <a onclick="showAdmin()" id="nav-admin">⚙️ Admin</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#" class="active">🏠 Home</a>
-      <a href="#">💼 Latest Jobs</a>
-      <a href="#">🪪 Admit Card</a>
-      <a href="#">🏆 Result</a>
-      <a href="#">🎓 Admission</a>
-      <a href="#">📄 Syllabus</a>
-      <a href="#">🔑 Answer Key</a>
-      <a href="#online">💻 Online Work</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-label"><div class="ticker-dot"></div> LIVE</div>
-  <div class="ticker-track">
-    <span>RRB ALP 2026 – 11,127 Posts Form Start</span>
-    <span>BPSC Teacher TRE 4.0 – 44,000+ Posts</span>
-    <span>IDBI Bank JAM 2026 – 1300 Posts</span>
-    <span>Bihar Board 10th Result 2026 – Coming Soon</span>
-    <span>Indian Army Agniveer CEE Form 2026 – Apply Now</span>
-    <span>RRB Group D – 22,195 Posts Online Form Open</span>
-    <span>SSC CHSL Tier-II Exam Date Out</span>
-    <span>UPSC Civil Services Final Result Out</span>
+  <div class="ticker">
+    <div class="ticker-label"><div class="ticker-dot"></div>LIVE</div>
+    <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"><span>Loading...</span></div></div>
+  </div>
+
+  <div class="hero">
+    <h2>भारत का नंबर 1 <span>Online Result</span> Portal</h2>
+    <p>Latest Govt Jobs, Results, Admit Cards – Auto Update | Expired Vacancies Automatic Hatt Jaati Hain</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Job, Result, Department खोजें..." oninput="renderCards()">
+      <button onclick="renderCards()">🔍 खोजें</button>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="num" id="s-total">-</div><div class="label">Active Jobs</div></div>
+      <div class="stat-item"><div class="num" id="s-posts">-</div><div class="label">Total Posts</div></div>
+      <div class="stat-item"><div class="num" id="s-closing">-</div><div class="label">Closing Soon</div></div>
+      <div class="stat-item"><div class="num" id="s-new">-</div><div class="label">HOT / NEW</div></div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <span class="auto-badge">⚡ AUTO UPDATE ON</span>
+    <span class="info">Expired vacancies <strong>automatically hat jaati hain</strong></span>
+    <span class="last-update" id="lastUpdateTxt">—</span>
+  </div>
+
+  <div class="container">
+    <div class="section-title"><h3>📌 Categories</h3><div class="line"></div></div>
+    <div class="categories" id="catGrid">
+      <div class="cat-card active" onclick="setCat('All',this)"><span class="icon">📋</span><div class="name">All</div><div class="count" id="c-All">0</div></div>
+      <div class="cat-card" onclick="setCat('Railway',this)"><span class="icon">🚂</span><div class="name">Railway</div><div class="count" id="c-Railway">0</div></div>
+      <div class="cat-card" onclick="setCat('Bank',this)"><span class="icon">🏦</span><div class="name">Bank</div><div class="count" id="c-Bank">0</div></div>
+      <div class="cat-card" onclick="setCat('Police',this)"><span class="icon">👮</span><div class="name">Police</div><div class="count" id="c-Police">0</div></div>
+      <div class="cat-card" onclick="setCat('Defence',this)"><span class="icon">⚔️</span><div class="name">Defence</div><div class="count" id="c-Defence">0</div></div>
+      <div class="cat-card" onclick="setCat('Teaching',this)"><span class="icon">👩‍🏫</span><div class="name">Teaching</div><div class="count" id="c-Teaching">0</div></div>
+      <div class="cat-card" onclick="setCat('UPSC',this)"><span class="icon">🏛️</span><div class="name">UPSC</div><div class="count" id="c-UPSC">0</div></div>
+      <div class="cat-card" onclick="setCat('Result',this)"><span class="icon">🏆</span><div class="name">Results</div><div class="count" id="c-Result">0</div></div>
+    </div>
+
+    <div class="main-layout">
+      <div>
+        <div id="jobs" class="section-title">
+          <h3>💼 Active Vacancies 2026</h3>
+          <div class="badge" id="activeCount">0</div>
+          <div class="line"></div>
+        </div>
+        <div class="filter-tabs">
+          <div class="filter-tab active" onclick="setTag('All',this)">सभी</div>
+          <div class="filter-tab" onclick="setTag('HOT',this)">🔥 HOT</div>
+          <div class="filter-tab" onclick="setTag('NEW',this)">✨ NEW</div>
+          <div class="filter-tab" onclick="setTag('SOON',this)">⏰ SOON</div>
+          <div class="filter-tab" onclick="setTag('OUT',this)">📢 OUT</div>
+        </div>
+        <div class="jobs-list" id="jobsList">
+          <div class="loading"><span class="spinner"></span>Loading...</div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-header">🪪 Admit Cards</div>
+          <div class="sidebar-list">
+            <a class="sidebar-item" href="https://www.rrbapply.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>RRB NTPC CBT-I Admit Card 2026</p><div class="meta">Indian Railways</div></div></a>
+            <a class="sidebar-item" href="https://www.drdo.gov.in/" target="_blank"><div class="dot dot-o"></div><div><p>DRDO CEPTAM-11 Exam City – Out</p><div class="meta">DRDO</div></div></a>
+            <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>SSC CHSL Tier-II Exam Date – Out</p><div class="meta">SSC India</div></div></a>
+            <a class="sidebar-item" href="https://exams.nta.ac.in/CUET-PG/" target="_blank"><div class="dot dot-b"></div><div><p>NTA CUET PG Admit Card 2026</p><div class="meta">NTA India</div></div></a>
+            <a class="sidebar-item" href="https://www.centralbankofindia.co.in/" target="_blank"><div class="dot dot-o"></div><div><p>Central Bank SO Admit Card – Out</p><div class="meta">Central Bank</div></div></a>
+            <a class="sidebar-item" href="https://mppsc.mp.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>MPPSC SES Admit Card 2026 – Out</p><div class="meta">MPPSC</div></div></a>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-header">🔑 Answer Keys</div>
+          <div class="sidebar-list">
+            <a class="sidebar-item" href="https://uppbpb.gov.in/" target="_blank"><div class="dot dot-o"></div><div><p>UP Police SI Answer Key 2026</p><div class="meta">UPPRPB</div></div></a>
+            <a class="sidebar-item" href="https://www.rrbapply.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>RRB JE Answer Key 2026</p><div class="meta">RRB India</div></div></a>
+            <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>SSC MTS / Havaldar Answer Key</p><div class="meta">SSC India</div></div></a>
+            <a class="sidebar-item" href="https://gate2026.iitr.ac.in/" target="_blank"><div class="dot dot-b"></div><div><p>GATE 2026 Answer Key</p><div class="meta">IIT / NTA</div></div></a>
+            <a class="sidebar-item" href="https://rssb.rajasthan.gov.in/" target="_blank"><div class="dot dot-r"></div><div><p>RSSB REET Mains Answer Key</p><div class="meta">RSSB Rajasthan</div></div></a>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-header">🔗 Important Links</div>
+          <div class="sidebar-list">
+            <a class="sidebar-item" href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank"><div class="dot dot-o"></div><div><p>PAN Card Registration 2026</p><div class="meta">Income Tax India</div></div></a>
+            <a class="sidebar-item" href="https://myaadhaar.uidai.gov.in/" target="_blank"><div class="dot dot-g"></div><div><p>Aadhar Card Download & Correction</p><div class="meta">UIDAI India</div></div></a>
+            <a class="sidebar-item" href="https://scholarship.up.gov.in/" target="_blank"><div class="dot dot-b"></div><div><p>UP Scholarship Online Form</p><div class="meta">UP Govt</div></div></a>
+            <a class="sidebar-item" href="https://voters.eci.gov.in/" target="_blank"><div class="dot dot-o"></div><div><p>Voter ID Registration 2026</p><div class="meta">Election Commission</div></div></a>
+            <a class="sidebar-item" href="https://uppsc.up.nic.in/" target="_blank"><div class="dot dot-b"></div><div><p>UPPSC Exam Calendar 2026</p><div class="meta">UPPSC</div></div></a>
+            <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-r"></div><div><p>SSC Exam Calendar 2026-27</p><div class="meta">SSC India</div></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>📋 All Work Online Result</h3>
+        <p>भारत का सबसे भरोसेमंद portal। Latest Jobs, Results, Admit Cards – Auto Updated Daily।</p>
+        <br><p style="color:rgba(255,255,255,.35);font-size:12px;">⚠️ Official notification zaroor check karein.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#jobs">Latest Jobs</a>
+        <a href="#admitcard">Admit Card</a>
+        <a href="#results">Results</a>
+        <a href="#answerkey">Answer Key</a>
+        <a onclick="showAdmin()" style="cursor:pointer;">Admin Panel</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <a href="#">📱 WhatsApp Channel</a>
+        <a href="#">📢 Telegram Group</a>
+        <a href="#">▶️ YouTube</a>
+        <a href="#">📘 Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2009–2026 All Work Online Result | <a href="https://sarkariresult.com.cm/" target="_blank">sarkariresult.com.cm</a></span>
+      <span>Privacy Policy | Disclaimer | Contact</span>
+    </div>
+  </footer>
+
+  <button class="admin-float" onclick="showAdmin()">⚙️ Admin</button>
+  <a class="whatsapp-btn" href="#">💬</a>
+</div><!-- end mainPage -->
+
+
+<!-- ████████████████████████████████████
+     ADMIN PAGE
+████████████████████████████████████ -->
+<div id="adminPage" class="page">
+
+  <!-- PASSWORD SCREEN -->
+  <div id="pwScreen" class="pw-screen">
+    <div class="pw-card">
+      <div class="lock">🔐</div>
+      <h2>Admin Panel</h2>
+      <p>Password daalkein aage badhne ke liye</p>
+      <div class="err-msg" id="pwErr">❌ Galat password!</div>
+      <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')checkPw()">
+      <button class="btn btn-o" style="width:100%;padding:12px;" onclick="checkPw()">Login Karein →</button>
+      <br><br>
+      <a onclick="showMain()" style="color:#888;font-size:13px;cursor:pointer;">← Website par wapas jaao</a>
+    </div>
+  </div>
+
+  <!-- ADMIN CONTENT -->
+  <div id="adminContent" style="display:none;">
+    <div class="admin-topbar">
+      <div>
+        <h1>⚙️ Admin Panel – All Work Online Result</h1>
+        <span>Vacancies add, edit, delete karein | Auto-expiry ON</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-g" onclick="exportJSON()">⬇️ Export JSON</button>
+        <button class="btn btn-b" onclick="openImport()">📥 Import JSON</button>
+        <button class="btn btn-r btn-sm" onclick="adminLogout()">🚪 Logout</button>
+        <button class="btn btn-n" onclick="showMain()">🌐 Website</button>
+      </div>
+    </div>
+
+    <div class="admin-stats">
+      <div class="stat-box"><div class="num" id="a-total">0</div><div class="lbl">Total</div></div>
+      <div class="stat-box"><div class="num" id="a-active">0</div><div class="lbl">Active</div></div>
+      <div class="stat-box"><div class="num" id="a-expired">0</div><div class="lbl">Expired</div></div>
+      <div class="stat-box"><div class="num" id="a-closing">0</div><div class="lbl">Closing 7 Days</div></div>
+      <div class="stat-box"><div class="num" id="a-hot">0</div><div class="lbl">HOT/NEW</div></div>
+    </div>
+
+    <div class="admin-container">
+      <div class="alert-box" id="alertBox"></div>
+
+      <!-- ADD/EDIT FORM -->
+      <div class="form-card">
+        <h2 id="formTitle">➕ Nai Vacancy Add Karein</h2>
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Vacancy Title *</label>
+            <input type="text" id="f-title" placeholder="e.g. UPSC Civil Services Pre 2026">
+          </div>
+          <div class="form-group">
+            <label>Total Posts</label>
+            <input type="text" id="f-posts" placeholder="e.g. 1000 ya Open">
+          </div>
+          <div class="form-group">
+            <label>Department / Board *</label>
+            <input type="text" id="f-dept" placeholder="e.g. UPSC India">
+          </div>
+          <div class="form-group">
+            <label>Category *</label>
+            <select id="f-cat">
+              <option>Railway</option><option>Bank</option><option>Police</option>
+              <option>Defence</option><option>Teaching</option><option>UPSC</option>
+              <option>SSC</option><option>Medical</option><option>Engineering</option>
+              <option>Result</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tag *</label>
+            <select id="f-tag">
+              <option value="NEW">✨ NEW</option>
+              <option value="HOT">🔥 HOT</option>
+              <option value="SOON">⏰ SOON</option>
+              <option value="OUT">📢 OUT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Last Date (Auto-expire hogi) *</label>
+            <input type="date" id="f-date">
+          </div>
+          <div class="form-group">
+            <label>Icon (Emoji)</label>
+            <input type="text" id="f-icon" value="📋" maxlength="4">
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="f-loc" placeholder="All India / Bihar / UP">
+          </div>
+          <div class="form-group full">
+            <label>Official Government Link *</label>
+            <input type="url" id="f-link" placeholder="https://upsc.gov.in/">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-o" onclick="saveVacancy()">💾 Save</button>
+          <button class="btn btn-n" onclick="resetForm()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="tools-row">
+        <button class="btn btn-r btn-sm" onclick="removeExpired()">🗑️ Sab Expired Hatao</button>
+        <div class="tools-info" id="toolsInfo">localStorage mein data save hota hai – browser band karne par bhi data rehta hai</div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-card">
+        <div class="table-header">
+          <h2>📋 All Vacancies</h2>
+          <div class="search-filter">
+            <input type="text" id="tSearch" placeholder="Search..." oninput="renderTable()">
+            <select id="tCat" onchange="renderTable()">
+              <option value="All">Sab Categories</option>
+              <option>Railway</option><option>Bank</option><option>Police</option>
+              <option>Defence</option><option>Teaching</option><option>UPSC</option><option>Result</option>
+            </select>
+            <select id="tTag" onchange="renderTable()">
+              <option value="All">Sab Tags</option>
+              <option>HOT</option><option>NEW</option><option>SOON</option><option>OUT</option>
+            </select>
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Icon</th><th>Title</th><th>Department</th>
+                <th>Category</th><th>Tag</th><th>Last Date</th><th>Din Baaki</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="vacTable"></tbody>
+          </table>
+        </div>
+        <div id="noData" class="no-data" style="display:none;">
+          <div class="big">📋</div><p>Koi vacancy nahi hai. Form se add karein.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- end adminContent -->
+</div><!-- end adminPage -->
+
+
+<!-- IMPORT MODAL -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal">
+    <button class="close-x" onclick="closeImport()">✕</button>
+    <h2>📥 JSON Import</h2>
+    <p style="font-size:13px;color:#888;margin-bottom:10px;">vacancies.json ka content paste karein:</p>
+    <input type="file" accept=".json" onchange="readFile(event)" style="margin-bottom:10px;font-size:13px;">
+    <textarea class="json-box" id="importBox" placeholder='{"vacancies":[...]}'></textarea>
+    <div style="display:flex;gap:10px;margin-top:12px;">
+      <button class="btn btn-o" onclick="doImport()">✅ Import</button>
+      <button class="btn btn-n" onclick="closeImport()">Cancel</button>
+    </div>
   </div>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <h2>भारत का नंबर 1 <span>सरकारी नौकरी</span> पोर्टल</h2>
-  <p>Latest Govt Jobs, Results, Admit Cards, Syllabus & Online Work Companies – सब कुछ एक जगह पर</p>
-  <div class="search-box">
-    <input type="text" placeholder="Job, Result, Company खोजें... जैसे RRB, SSC, UPSC">
-    <button>🔍 खोजें</button>
-  </div>
-  <div class="stats-row">
-    <div class="stat-item"><div class="num">50K+</div><div class="label">Jobs Listed</div></div>
-    <div class="stat-item"><div class="num">2.5Cr+</div><div class="label">Users Monthly</div></div>
-    <div class="stat-item"><div class="num">500+</div><div class="label">Results Daily</div></div>
-    <div class="stat-item"><div class="num">150+</div><div class="label">Online Companies</div></div>
-  </div>
-</div>
 
-<!-- CONTAINER -->
-<div class="container">
+<!-- ████████████████████████████████████
+     JAVASCRIPT
+████████████████████████████████████ -->
+<script>
+// ═══════════════════════════════════════
+// CONFIG — Yahan password change karein
+// ═══════════════════════════════════════
+const ADMIN_PASSWORD = 'admin123';
+const STORAGE_KEY    = 'awor_data';
 
-  <!-- CATEGORIES -->
-  <div class="section-title">
-    <h3>📌 सभी Categories</h3>
-    <div class="line"></div>
-  </div>
-  <div class="categories">
-    <div class="cat-card"><span class="icon">🚂</span><div class="name">Railway</div><div class="count">12 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">🏦</span><div class="name">Bank Jobs</div><div class="count">8 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">👮</span><div class="name">Police</div><div class="count">10 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">⚔️</span><div class="name">Defence</div><div class="count">6 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">🏛️</span><div class="name">UPSC / PSC</div><div class="count">5 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">👩‍🏫</span><div class="name">Teaching</div><div class="count">15 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">🏥</span><div class="name">Medical</div><div class="count">7 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">📊</span><div class="name">SSC / CHSL</div><div class="count">4 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">🏗️</span><div class="name">Engineering</div><div class="count">9 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">⚖️</span><div class="name">High Court</div><div class="count">3 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">📮</span><div class="name">Post Office</div><div class="count">5 Active Jobs</div></div>
-    <div class="cat-card"><span class="icon">💻</span><div class="name">Online Work</div><div class="count">150+ Companies</div></div>
-  </div>
+// ═══════════════════════════════════════
+// DEFAULT DATA
+// ═══════════════════════════════════════
+const DEFAULT_DATA = [
+  { id:1,  title:'Railway RRB ALP Online Form 2026',           posts:'11,127',  department:'RRB India',    category:'Railway',  icon:'🚂', tag:'HOT',  last_date:'2026-04-15', official_link:'https://www.rrbapply.gov.in/',              location:'All India' },
+  { id:2,  title:'BPSC School Teacher TRE 4.0 Online Form',    posts:'44,000+', department:'BPSC Bihar',   category:'Teaching', icon:'🏛️', tag:'NEW',  last_date:'2026-04-20', official_link:'https://www.bpsc.bih.nic.in/',              location:'Bihar' },
+  { id:3,  title:'Indian Army Agniveer CEE Online Form 2026',  posts:'Open',    department:'Indian Army',  category:'Defence',  icon:'⚔️', tag:'HOT',  last_date:'2026-04-10', official_link:'https://joinindianarmy.nic.in/',            location:'All India' },
+  { id:4,  title:'IDBI Bank JAM Online Form 2026',             posts:'1,300',   department:'IDBI Bank',    category:'Bank',     icon:'🏦', tag:'NEW',  last_date:'2026-04-25', official_link:'https://www.idbibank.in/careers.aspx',     location:'All India' },
+  { id:5,  title:'Railway RRB Group D Online Form 2026',       posts:'22,195',  department:'RRB India',    category:'Railway',  icon:'🚂', tag:'SOON', last_date:'2026-04-30', official_link:'https://www.rrbapply.gov.in/',              location:'All India' },
+  { id:6,  title:'HSSC Haryana Police Constable Form 2026',    posts:'5,500',   department:'HSSC Haryana', category:'Police',   icon:'👮', tag:'NEW',  last_date:'2026-04-18', official_link:'https://www.hssc.gov.in/',                  location:'Haryana' },
+  { id:7,  title:'UPSC Civil Services IAS Final Result 2026',  posts:'Result',  department:'UPSC',         category:'Result',   icon:'📋', tag:'OUT',  last_date:'2026-12-31', official_link:'https://upsc.gov.in/',                     location:'All India' },
+  { id:8,  title:'IBPS RRB XIV Office Assistant Mains Result', posts:'Result',  department:'IBPS',         category:'Result',   icon:'🏦', tag:'OUT',  last_date:'2026-12-31', official_link:'https://www.ibps.in/',                     location:'All India' },
+  { id:9,  title:'Bihar Police BPSSC SI Pre Result 2026',      posts:'Result',  department:'BPSSC Bihar',  category:'Police',   icon:'👮', tag:'OUT',  last_date:'2026-12-31', official_link:'https://www.bpssc.bih.nic.in/',            location:'Bihar' },
+  { id:10, title:'SSB Constable Tradesman Online Form 2026',   posts:'Open',    department:'SSB India',    category:'Defence',  icon:'🛡️', tag:'NEW',  last_date:'2026-04-22', official_link:'https://www.ssb.nic.in/',                  location:'All India' }
+];
 
-  <!-- MAIN LAYOUT -->
-  <div class="main-layout">
+// ═══════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════
+let vacancies = [];
+let activeCat = 'All';
+let activeTag = 'All';
 
-    <!-- LEFT: JOB LISTINGS -->
-    <div>
-      <!-- LATEST JOBS -->
-      <div class="section-title">
-        <h3>💼 Latest Jobs 2026</h3>
-        <div class="badge">New</div>
-        <div class="line"></div>
-      </div>
-      <div class="jobs-list">
-        <a class="job-card hot" href="https://www.rrbapply.gov.in/" target="_blank">
-          <div class="job-icon rail">🚂</div>
-          <div class="job-info">
-            <h4>Railway RRB ALP Online Form 2026 – 11,127 Posts</h4>
-            <div class="job-meta">
-              <span>📅 Last Date: 15 Apr 2026</span>
-              <span>🏢 RRB India</span>
-              <span>📍 All India</span>
-            </div>
-          </div>
-          <div class="tag hot">HOT 🔥</div>
-        </a>
-        <a class="job-card new" href="https://www.bpsc.bih.nic.in/" target="_blank">
-          <div class="job-icon gov">🏛️</div>
-          <div class="job-info">
-            <h4>BPSC School Teacher TRE 4.0 Online Form 2026 – 44,000+ Posts</h4>
-            <div class="job-meta">
-              <span>📅 Last Date: 20 Apr 2026</span>
-              <span>🏢 BPSC Bihar</span>
-            </div>
-          </div>
-          <div class="tag new">NEW ✨</div>
-        </a>
-        <a class="job-card hot" href="https://joinindianarmy.nic.in/" target="_blank">
-          <div class="job-icon army">⚔️</div>
-          <div class="job-info">
-            <h4>Indian Army Agniveer CEE Online Form 2026</h4>
-            <div class="job-meta">
-              <span>📅 Last Date: 10 Apr 2026</span>
-              <span>🏢 Indian Army</span>
-            </div>
-          </div>
-          <div class="tag hot">HOT 🔥</div>
-        </a>
-        <a class="job-card new" href="https://www.idbibank.in/careers.aspx" target="_blank">
-          <div class="job-icon bank">🏦</div>
-          <div class="job-info">
-            <h4>IDBI Bank JAM Online Form 2026 – 1300 Posts</h4>
-            <div class="job-meta">
-              <span>📅 Last Date: 5 Apr 2026</span>
-              <span>🏢 IDBI Bank</span>
-            </div>
-          </div>
-          <div class="tag new">NEW ✨</div>
-        </a>
-        <a class="job-card" href="https://www.rrbapply.gov.in/" target="_blank">
-          <div class="job-icon rail">🚂</div>
-          <div class="job-info">
-            <h4>Railway RRB Group D Online Form 2026 – 22,195 Posts</h4>
-            <div class="job-meta">
-              <span>📅 Last Date: 30 Apr 2026</span>
-              <span>🏢 RRB India</span>
-            </div>
-          </div>
-          <div class="tag soon">SOON</div>
-        </a>
-        <a class="job-card" href="https://www.hssc.gov.in/" target="_blank">
-          <div class="job-icon gov">👮</div>
-          <div class="job-info">
-            <h4>HSSC Haryana Police Constable Online Form 2026 – 5500 Posts</h4>
-            <div class="job-meta">
-              <span>📅 Re-Open</span>
-              <span>🏢 HSSC Haryana</span>
-            </div>
-          </div>
-          <div class="tag new">RE-OPEN</div>
-        </a>
-      </div>
+// ═══════════════════════════════════════
+// STORAGE
+// ═══════════════════════════════════════
+function load() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  vacancies = raw ? JSON.parse(raw) : [...DEFAULT_DATA];
+}
 
-      <!-- RESULTS -->
-      <br>
-      <div class="section-title">
-        <h3>🏆 Latest Results 2026</h3>
-        <div class="badge">Out</div>
-        <div class="line"></div>
-      </div>
-      <div class="jobs-list">
-        <a class="job-card" href="https://upsc.gov.in/" target="_blank">
-          <div class="job-icon gov">📋</div>
-          <div class="job-info">
-            <h4>UPSC Civil Services IAS Final Result With Marks 2026</h4>
-            <div class="job-meta"><span>🏢 UPSC</span><span>📅 Out Now</span></div>
-          </div>
-          <div class="tag out">OUT</div>
-        </a>
-        <a class="job-card" href="https://www.ibps.in/" target="_blank">
-          <div class="job-icon bank">🏦</div>
-          <div class="job-info">
-            <h4>IBPS RRB XIV Office Assistant Mains Result 2026</h4>
-            <div class="job-meta"><span>🏢 IBPS</span><span>📅 Out Now</span></div>
-          </div>
-          <div class="tag out">OUT</div>
-        </a>
-        <a class="job-card" href="https://www.bpssc.bih.nic.in/" target="_blank">
-          <div class="job-icon gov">👮</div>
-          <div class="job-info">
-            <h4>Bihar Police BPSSC SI Pre Result 2026</h4>
-            <div class="job-meta"><span>🏢 BPSSC Bihar</span><span>📅 Out Now</span></div>
-          </div>
-          <div class="tag out">OUT</div>
-        </a>
-        <a class="job-card" href="https://biharboardonline.bihar.gov.in/" target="_blank">
-          <div class="job-icon gov">📋</div>
-          <div class="job-info">
-            <h4>Bihar Board Class 10th & 12th Result 2026</h4>
-            <div class="job-meta"><span>🏢 BSEB Bihar</span><span>📅 Coming Soon</span></div>
-          </div>
-          <div class="tag soon">SOON</div>
-        </a>
-      </div>
-    </div>
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
+}
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+// ═══════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
 
-      <!-- ADMIT CARDS -->
-      <div class="sidebar-card">
-        <div class="sidebar-header">🪪 Admit Cards</div>
-        <div class="sidebar-list">
-          <a class="sidebar-item" href="https://www.rrbapply.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>RRB NTPC Graduate Level CBT-I Admit Card 2026</p><div class="meta">Indian Railways</div></div></a>
-          <a class="sidebar-item" href="https://www.drdo.gov.in/" target="_blank"><div class="dot dot-orange"></div><div><p>DRDO CEPTAM-11 Exam City Details – Out</p><div class="meta">DRDO</div></div></a>
-          <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>SSC CHSL Tier-II Exam Date 2026 – Out</p><div class="meta">SSC India</div></div></a>
-          <a class="sidebar-item" href="https://exams.nta.ac.in/CUET-PG/" target="_blank"><div class="dot dot-blue"></div><div><p>NTA CUET PG Admit Card 2026</p><div class="meta">NTA India</div></div></a>
-          <a class="sidebar-item" href="https://www.centralbankofindia.co.in/" target="_blank"><div class="dot dot-orange"></div><div><p>Central Bank Specialist Officer Admit Card – Out</p><div class="meta">Central Bank</div></div></a>
-          <a class="sidebar-item" href="https://mppsc.mp.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>MPPSC SES Admit Card 2026 – Out</p><div class="meta">MPPSC</div></div></a>
+function goHome() {
+  showPage('mainPage');
+  purgeExpired();
+  renderCards();
+  updateStats();
+  updateTicker();
+}
+
+function showMain() { goHome(); }
+
+function showAdmin() {
+  showPage('adminPage');
+  const loggedIn = sessionStorage.getItem('awor_admin') === '1';
+  document.getElementById('pwScreen').style.display    = loggedIn ? 'none'  : 'flex';
+  document.getElementById('adminContent').style.display = loggedIn ? 'block' : 'none';
+  if (loggedIn) { renderAdminAll(); }
+}
+
+// ═══════════════════════════════════════
+// PASSWORD
+// ═══════════════════════════════════════
+function checkPw() {
+  const val = document.getElementById('pwInput').value;
+  if (val === ADMIN_PASSWORD) {
+    sessionStorage.setItem('awor_admin', '1');
+    document.getElementById('pwScreen').style.display     = 'none';
+    document.getElementById('adminContent').style.display = 'block';
+    renderAdminAll();
+  } else {
+    const err = document.getElementById('pwErr');
+    err.style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    setTimeout(() => err.style.display = 'none', 3000);
+  }
+}
+
+function adminLogout() {
+  sessionStorage.removeItem('awor_admin');
+  document.getElementById('pwInput').value = '';
+  document.getElementById('adminContent').style.display = 'none';
+  document.getElementById('pwScreen').style.display     = 'flex';
+}
+
+// ═══════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════
+function daysLeft(d) {
+  if (!d) return null;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const end   = new Date(d); end.setHours(0,0,0,0);
+  return Math.ceil((end - today) / 86400000);
+}
+
+function purgeExpired() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  vacancies = vacancies.filter(v => {
+    if (!v.last_date) return true;
+    const d = new Date(v.last_date); d.setHours(0,0,0,0);
+    return d >= today;
+  });
+  save();
+}
+
+// ═══════════════════════════════════════
+// WEBSITE — RENDER CARDS
+// ═══════════════════════════════════════
+function renderCards() {
+  let list = [...vacancies];
+  const q  = (document.getElementById('searchInput').value || '').toLowerCase();
+  if (q)              list = list.filter(v => v.title.toLowerCase().includes(q) || v.department.toLowerCase().includes(q));
+  if (activeCat !== 'All') list = list.filter(v => v.category === activeCat);
+  if (activeTag !== 'All') list = list.filter(v => v.tag === activeTag);
+
+  list.sort((a,b) => {
+    const o = {HOT:0,NEW:1,OUT:2,SOON:3};
+    return (o[a.tag]??9) - (o[b.tag]??9) || (daysLeft(a.last_date)||999) - (daysLeft(b.last_date)||999);
+  });
+
+  document.getElementById('activeCount').textContent = list.length + ' Active';
+  const el = document.getElementById('jobsList');
+
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><div class="big">🔍</div><p>Koi vacancy nahi mili.</p></div>';
+    return;
+  }
+
+  el.innerHTML = list.map(v => {
+    const dl = daysLeft(v.last_date);
+    let dHtml = '';
+    if (dl !== null && v.tag !== 'OUT') {
+      const cls = dl <= 3 ? 'urgent' : dl <= 7 ? '' : 'safe';
+      dHtml = `<div class="job-days ${cls}">${dl <= 0 ? 'Aaj Last Day!' : dl + ' din baaki'}</div>`;
+    }
+    return `
+      <a class="job-card tag-${v.tag}" href="${v.official_link}" target="_blank">
+        <div class="job-icon">${v.icon||'📋'}</div>
+        <div class="job-info">
+          <h4>${v.title}${v.posts ? ' – '+v.posts+' Posts' : ''}</h4>
+          <div class="job-meta">
+            <span>🏢 ${v.department}</span>
+            <span>📅 ${v.last_date||'N/A'}</span>
+            ${v.location ? `<span>📍 ${v.location}</span>` : ''}
+          </div>
         </div>
-      </div>
+        ${dHtml}
+        <div class="tag tag-${v.tag}-l">${v.tag}</div>
+      </a>`;
+  }).join('');
+}
 
-      <!-- ANSWER KEY -->
-      <div class="sidebar-card">
-        <div class="sidebar-header">🔑 Answer Keys</div>
-        <div class="sidebar-list">
-          <a class="sidebar-item" href="https://uppbpb.gov.in/" target="_blank"><div class="dot dot-orange"></div><div><p>UP Police SI Answer Key 2026 – Soon</p><div class="meta">UPPRPB</div></div></a>
-          <a class="sidebar-item" href="https://www.rrbapply.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>RRB Junior Engineer JE Answer Key 2026</p><div class="meta">RRB India</div></div></a>
-          <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>SSC MTS / Havaldar Answer Key 2026</p><div class="meta">SSC India</div></div></a>
-          <a class="sidebar-item" href="https://gate2026.iitr.ac.in/" target="_blank"><div class="dot dot-blue"></div><div><p>GATE 2026 Answer Key</p><div class="meta">IIT / NTA</div></div></a>
-          <a class="sidebar-item" href="https://rssb.rajasthan.gov.in/" target="_blank"><div class="dot dot-red"></div><div><p>RSSB REET Mains Teacher Answer Key 2026</p><div class="meta">RSSB Rajasthan</div></div></a>
-        </div>
-      </div>
+function updateStats() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  document.getElementById('s-total').textContent   = vacancies.length;
+  const closing = vacancies.filter(v => { const d=daysLeft(v.last_date); return d!==null&&d<=7&&d>=0&&v.tag!=='OUT'; }).length;
+  document.getElementById('s-closing').textContent = closing;
+  document.getElementById('s-new').textContent     = vacancies.filter(v=>v.tag==='HOT'||v.tag==='NEW').length;
 
-      <!-- IMPORTANT LINKS -->
-      <div class="sidebar-card">
-        <div class="sidebar-header">🔗 Important Links</div>
-        <div class="sidebar-list">
-          <a class="sidebar-item" href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank"><div class="dot dot-orange"></div><div><p>PAN Card Registration 2026</p><div class="meta">Income Tax India</div></div></a>
-          <a class="sidebar-item" href="https://myaadhaar.uidai.gov.in/" target="_blank"><div class="dot dot-green"></div><div><p>Aadhar Card Download & Correction</p><div class="meta">UIDAI India</div></div></a>
-          <a class="sidebar-item" href="https://scholarship.up.gov.in/" target="_blank"><div class="dot dot-blue"></div><div><p>UP Scholarship Online Form 2025-26</p><div class="meta">UP Govt</div></div></a>
-          <a class="sidebar-item" href="https://voters.eci.gov.in/" target="_blank"><div class="dot dot-orange"></div><div><p>Voter ID Registration 2026</p><div class="meta">Election Commission</div></div></a>
-          <a class="sidebar-item" href="https://uppsc.up.nic.in/" target="_blank"><div class="dot dot-blue"></div><div><p>UPPSC Exam Calendar 2026</p><div class="meta">UPPSC</div></div></a>
-          <a class="sidebar-item" href="https://ssc.gov.in/" target="_blank"><div class="dot dot-red"></div><div><p>SSC Exam Calendar 2026-27</p><div class="meta">SSC India</div></div></a>
-        </div>
-      </div>
+  let posts = 0;
+  vacancies.forEach(v => { const n=parseInt((v.posts||'').replace(/\D/g,'')); if(!isNaN(n)) posts+=n; });
+  document.getElementById('s-posts').textContent = posts > 100000 ? Math.round(posts/1000)+'K+' : posts || '-';
 
-    </div>
-  </div>
+  ['All','Railway','Bank','Police','Defence','Teaching','UPSC','Result'].forEach(cat => {
+    const el = document.getElementById('c-'+cat);
+    if (el) el.textContent = (cat==='All' ? vacancies.length : vacancies.filter(v=>v.category===cat).length) + ' Jobs';
+  });
+}
 
-  <!-- ── ONLINE WORK COMPANIES SECTION ── -->
-  <div id="online" class="online-section">
-    <div class="online-title">
-      <h3>💻 All Work <span>Online Companies</span></h3>
-      <p>घर बैठे काम करें – India की Top Online Work Companies 2026</p>
-    </div>
+function updateTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!vacancies.length) return;
+  track.innerHTML = vacancies.slice(0,10).map(v =>
+    `<span>${v.icon||'🔔'} ${v.title} – Last Date: ${v.last_date||'N/A'}</span>`
+  ).join('');
+  document.getElementById('lastUpdateTxt').textContent = 'Last checked: ' + new Date().toLocaleTimeString('hi-IN');
+}
 
-    <div class="companies-grid">
+function setCat(cat, el) {
+  activeCat = cat;
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  renderCards();
+}
 
-      <!-- FREELANCING -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF7043">🌐</div>
-        <div class="company-name">Freelancer.com</div>
-        <div class="company-type">Freelancing Platform</div>
-        <div class="company-earn">₹500–₹50,000/project</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#1DBF73">💼</div>
-        <div class="company-name">Fiverr</div>
-        <div class="company-type">Gig Work Platform</div>
-        <div class="company-earn">₹400–₹40,000/gig</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#14A800">🔧</div>
-        <div class="company-name">Upwork</div>
-        <div class="company-type">Remote Freelancing</div>
-        <div class="company-earn">₹1,000–₹1L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#E44D26">✍️</div>
-        <div class="company-name">Internshala</div>
-        <div class="company-type">Internship & Jobs</div>
-        <div class="company-earn">₹5,000–₹15,000/month</div>
-      </div>
+function setTag(tag, el) {
+  activeTag = tag;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderCards();
+}
 
-      <!-- DATA ENTRY -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#4285F4">📊</div>
-        <div class="company-name">Amazon MTurk</div>
-        <div class="company-type">Micro Task Work</div>
-        <div class="company-earn">₹200–₹2,000/day</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#00ADEF">🖊️</div>
-        <div class="company-name">Clickworker</div>
-        <div class="company-type">Data Entry & Surveys</div>
-        <div class="company-earn">₹300–₹3,000/day</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#F57C00">📝</div>
-        <div class="company-name">Lionbridge</div>
-        <div class="company-type">Data Annotation AI</div>
-        <div class="company-earn">₹8,000–₹25,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#3F51B5">🗂️</div>
-        <div class="company-name">Appen</div>
-        <div class="company-type">AI Training Data</div>
-        <div class="company-earn">₹5,000–₹20,000/month</div>
-      </div>
+// ═══════════════════════════════════════
+// ADMIN — RENDER
+// ═══════════════════════════════════════
+function renderAdminAll() { renderTable(); updateAdminStats(); }
 
-      <!-- TEACHING / TUTORING -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF6F00">📚</div>
-        <div class="company-name">BYJU's</div>
-        <div class="company-type">Online Teaching</div>
-        <div class="company-earn">₹15,000–₹60,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#7C4DFF">🎓</div>
-        <div class="company-name">Vedantu</div>
-        <div class="company-type">Live Online Tutoring</div>
-        <div class="company-earn">₹10,000–₹50,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#00BFA5">🏫</div>
-        <div class="company-name">Chegg Tutors</div>
-        <div class="company-type">Online Tutoring</div>
-        <div class="company-earn">₹600–₹900/hour</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#DD2C00">🎯</div>
-        <div class="company-name">Unacademy</div>
-        <div class="company-type">Online Education</div>
-        <div class="company-earn">₹20,000–₹80,000/month</div>
-      </div>
+function updateAdminStats() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  document.getElementById('a-total').textContent   = vacancies.length;
+  document.getElementById('a-active').textContent  = vacancies.filter(v=>!v.last_date||new Date(v.last_date)>=today).length;
+  document.getElementById('a-expired').textContent = vacancies.filter(v=>v.last_date&&new Date(v.last_date)<today).length;
+  document.getElementById('a-closing').textContent = vacancies.filter(v=>{ const d=daysLeft(v.last_date); return d!==null&&d<=7&&d>=0; }).length;
+  document.getElementById('a-hot').textContent     = vacancies.filter(v=>v.tag==='HOT'||v.tag==='NEW').length;
+}
 
-      <!-- CONTENT / WRITING -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#1565C0">✍️</div>
-        <div class="company-name">Contentmart</div>
-        <div class="company-type">Content Writing</div>
-        <div class="company-earn">₹1–₹5/word</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#2E7D32">📰</div>
-        <div class="company-name">iWriter</div>
-        <div class="company-type">Article Writing</div>
-        <div class="company-earn">₹800–₹5,000/article</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#880E4F">🖋️</div>
-        <div class="company-name">Textbroker</div>
-        <div class="company-type">Web Content Writing</div>
-        <div class="company-earn">₹500–₹3,000/article</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#00695C">📖</div>
-        <div class="company-name">WriterAccess</div>
-        <div class="company-type">Content Platform</div>
-        <div class="company-earn">₹1,500–₹8,000/piece</div>
-      </div>
+function renderTable() {
+  const q   = document.getElementById('tSearch').value.toLowerCase();
+  const cat = document.getElementById('tCat').value;
+  const tag = document.getElementById('tTag').value;
+  let list  = vacancies.filter(v => {
+    const mq  = !q || v.title.toLowerCase().includes(q) || (v.department||'').toLowerCase().includes(q);
+    const mc  = cat==='All' || v.category===cat;
+    const mt  = tag==='All' || v.tag===tag;
+    return mq && mc && mt;
+  });
 
-      <!-- DESIGN / CREATIVE -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#E91E63">🎨</div>
-        <div class="company-name">99designs</div>
-        <div class="company-type">Graphic Design</div>
-        <div class="company-earn">₹5,000–₹80,000/project</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF5722">🖌️</div>
-        <div class="company-name">DesignCrowd</div>
-        <div class="company-type">Design Contests</div>
-        <div class="company-earn">₹3,000–₹30,000/contest</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#6200EA">🎬</div>
-        <div class="company-name">Adobe Stock</div>
-        <div class="company-type">Stock Images/Videos</div>
-        <div class="company-earn">₹25–₹200/download</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#212121">📷</div>
-        <div class="company-name">Shutterstock</div>
-        <div class="company-type">Stock Photography</div>
-        <div class="company-earn">₹25–₹300/image</div>
-      </div>
+  const tbody = document.getElementById('vacTable');
+  document.getElementById('noData').style.display = list.length ? 'none' : 'block';
+  if (!list.length) { tbody.innerHTML=''; return; }
 
-      <!-- SURVEY / REWARDS -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF9800">📋</div>
-        <div class="company-name">Swagbucks</div>
-        <div class="company-type">Surveys & Rewards</div>
-        <div class="company-earn">₹500–₹2,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#607D8B">📊</div>
-        <div class="company-name">Toluna</div>
-        <div class="company-type">Online Surveys</div>
-        <div class="company-earn">₹200–₹1,500/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#4CAF50">🗳️</div>
-        <div class="company-name">Opinion Bureau</div>
-        <div class="company-type">Paid Surveys India</div>
-        <div class="company-earn">₹300–₹2,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#009688">💬</div>
-        <div class="company-name">IndiaSpeaks</div>
-        <div class="company-type">Market Research</div>
-        <div class="company-earn">₹500–₹3,000/month</div>
-      </div>
+  tbody.innerHTML = list.map(v => {
+    const dl = daysLeft(v.last_date);
+    let dBadge = '—';
+    if (dl !== null) {
+      if (dl < 0)      dBadge = `<span class="days-badge d-exp">Expired</span>`;
+      else if (dl <= 3) dBadge = `<span class="days-badge d-urg">${dl} din</span>`;
+      else              dBadge = `<span class="days-badge d-ok">${dl} din</span>`;
+    }
+    return `
+      <tr>
+        <td>${v.id}</td>
+        <td style="font-size:20px">${v.icon||'📋'}</td>
+        <td>
+          <a href="${v.official_link}" target="_blank" style="color:#0B1F3A;font-weight:bold;">${v.title}</a>
+          <br><small style="color:#9CA3AF">${v.posts?v.posts+' Posts':''} ${v.location?'| '+v.location:''}</small>
+        </td>
+        <td>${v.department}</td>
+        <td>${v.category}</td>
+        <td><span class="pill p-${v.tag}">${v.tag}</span></td>
+        <td>${v.last_date||'—'}</td>
+        <td>${dBadge}</td>
+        <td>
+          <div class="action-btns">
+            <button class="btn btn-b btn-sm" onclick="editV(${v.id})">✏️</button>
+            <button class="btn btn-r btn-sm" onclick="deleteV(${v.id})">🗑️</button>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+}
 
-      <!-- SOCIAL MEDIA / YOUTUBE -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF0000">▶️</div>
-        <div class="company-name">YouTube</div>
-        <div class="company-type">Video Content Creator</div>
-        <div class="company-earn">₹1,000–₹10L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#E91E63">📸</div>
-        <div class="company-name">Instagram</div>
-        <div class="company-type">Social Media Creator</div>
-        <div class="company-earn">₹5,000–₹5L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#1DA1F2">🐦</div>
-        <div class="company-name">Twitter/X</div>
-        <div class="company-type">Creator Monetization</div>
-        <div class="company-earn">₹2,000–₹50,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#6610F2">📝</div>
-        <div class="company-name">Medium</div>
-        <div class="company-type">Blog Writing Partner</div>
-        <div class="company-earn">₹500–₹20,000/month</div>
-      </div>
+// ═══════════════════════════════════════
+// ADMIN — CRUD
+// ═══════════════════════════════════════
+function saveVacancy() {
+  const title = document.getElementById('f-title').value.trim();
+  const dept  = document.getElementById('f-dept').value.trim();
+  const link  = document.getElementById('f-link').value.trim();
+  const date  = document.getElementById('f-date').value;
+  if (!title||!dept||!link||!date) { showAlert('⚠️ Title, Department, Link aur Last Date zaroori hain!','err'); return; }
 
-      <!-- E-COMMERCE -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF9900">🛒</div>
-        <div class="company-name">Amazon Seller</div>
-        <div class="company-type">E-Commerce Selling</div>
-        <div class="company-earn">₹10,000–₹5L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#2874F0">🏪</div>
-        <div class="company-name">Flipkart Seller</div>
-        <div class="company-type">Online Retail</div>
-        <div class="company-earn">₹5,000–₹2L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#FC5C02">🏷️</div>
-        <div class="company-name">Meesho</div>
-        <div class="company-type">Reselling Platform</div>
-        <div class="company-earn">₹5,000–₹50,000/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#FF3F6C">👗</div>
-        <div class="company-name">Myntra Seller</div>
-        <div class="company-type">Fashion E-Commerce</div>
-        <div class="company-earn">₹8,000–₹1L+/month</div>
-      </div>
+  const eid = document.getElementById('editId').value;
+  const entry = {
+    id:            eid ? parseInt(eid) : Date.now(),
+    title, posts:  document.getElementById('f-posts').value.trim(),
+    department:    dept,
+    category:      document.getElementById('f-cat').value,
+    icon:          document.getElementById('f-icon').value.trim()||'📋',
+    tag:           document.getElementById('f-tag').value,
+    last_date:     date,
+    official_link: link,
+    location:      document.getElementById('f-loc').value.trim()
+  };
 
-      <!-- TECH / CODING -->
-      <div class="company-card">
-        <div class="company-logo" style="background:#0D1117">💻</div>
-        <div class="company-name">GitHub Jobs</div>
-        <div class="company-type">Developer Remote Work</div>
-        <div class="company-earn">₹50,000–₹3L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#0A66C2">🔗</div>
-        <div class="company-name">LinkedIn</div>
-        <div class="company-type">Remote Job Platform</div>
-        <div class="company-earn">₹20,000–₹2L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#4B0082">🖥️</div>
-        <div class="company-name">Toptal</div>
-        <div class="company-type">Elite Freelancers</div>
-        <div class="company-earn">₹80,000–₹4L+/month</div>
-      </div>
-      <div class="company-card">
-        <div class="company-logo" style="background:#1C1C1C">🤖</div>
-        <div class="company-name">Scale AI</div>
-        <div class="company-type">AI Data Labeling</div>
-        <div class="company-earn">₹10,000–₹40,000/month</div>
-      </div>
+  if (eid) {
+    vacancies = vacancies.map(v => v.id===entry.id ? entry : v);
+    showAlert('✅ Vacancy update ho gayi!','ok');
+  } else {
+    vacancies.unshift(entry);
+    showAlert('✅ Nai vacancy add ho gayi!','ok');
+  }
+  save(); renderAdminAll(); resetForm();
+}
 
-    </div>
-  </div>
+function editV(id) {
+  const v = vacancies.find(v=>v.id===id); if(!v) return;
+  document.getElementById('editId').value   = v.id;
+  document.getElementById('f-title').value  = v.title;
+  document.getElementById('f-posts').value  = v.posts||'';
+  document.getElementById('f-dept').value   = v.department;
+  document.getElementById('f-cat').value    = v.category;
+  document.getElementById('f-icon').value   = v.icon||'📋';
+  document.getElementById('f-tag').value    = v.tag;
+  document.getElementById('f-date').value   = v.last_date;
+  document.getElementById('f-link').value   = v.official_link;
+  document.getElementById('f-loc').value    = v.location||'';
+  document.getElementById('formTitle').textContent = '✏️ Vacancy Edit Karein';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-</div>
+function deleteV(id) {
+  if (!confirm('Delete karna chahte hain?')) return;
+  vacancies = vacancies.filter(v=>v.id!==id);
+  save(); renderAdminAll();
+  showAlert('🗑️ Delete ho gaya.','inf');
+}
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h3>📋 All Work Online Result</h3>
-      <p>भारत का सबसे भरोसेमंद All Work Online Result portal। Latest Jobs, Results, Admit Cards, Syllabus & Online Work Companies – सब कुछ एक जगह पर।</p>
-      <br>
-      <p style="color: rgba(255,255,255,0.4); font-size: 12px;">⚠️ यह site किसी government department से affiliated नहीं है। Official notification जरूर check करें।</p>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#">Latest Jobs</a>
-      <a href="#">Admit Card</a>
-      <a href="#">Results</a>
-      <a href="#">Answer Key</a>
-      <a href="#">Syllabus</a>
-      <a href="#">Admission</a>
-      <a href="#online">Online Work</a>
-    </div>
-    <div class="footer-col">
-      <h4>Top Jobs 2026</h4>
-      <a href="#">RRB ALP 2026</a>
-      <a href="#">BPSC Teacher</a>
-      <a href="#">SSC CHSL</a>
-      <a href="#">UPSC CSE</a>
-      <a href="#">RRB Group D</a>
-      <a href="#">Bank PO</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <a href="#">📱 WhatsApp Channel</a>
-      <a href="#">📢 Telegram Group</a>
-      <a href="#">▶️ YouTube Channel</a>
-      <a href="#">📘 Facebook Page</a>
-      <a href="#">📸 Instagram</a>
-      <a href="#">✉️ Contact Us</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2009 – 2026 All Work Online Result | <a href="https://sarkariresult.com.cm/" target="_blank" style="color:#FFB703; text-decoration:underline;">sarkariresult.com.cm</a> | All Rights Reserved</span>
-    <span>Privacy Policy | Disclaimer | Contact</span>
-  </div>
-</footer>
+function removeExpired() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const before = vacancies.length;
+  vacancies = vacancies.filter(v => !v.last_date || new Date(v.last_date)>=today);
+  const removed = before - vacancies.length;
+  save(); renderAdminAll();
+  showAlert(`🗑️ ${removed} expired vacancies hata di.`, removed>0?'ok':'inf');
+}
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp-btn" href="#">💬</a>
+function resetForm() {
+  ['editId','f-title','f-posts','f-dept','f-loc','f-link'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('f-cat').value  = 'Railway';
+  document.getElementById('f-tag').value  = 'NEW';
+  document.getElementById('f-icon').value = '📋';
+  document.getElementById('f-date').value = '';
+  document.getElementById('formTitle').textContent = '➕ Nai Vacancy Add Karein';
+}
 
+// ═══════════════════════════════════════
+// IMPORT / EXPORT
+// ═══════════════════════════════════════
+function exportJSON() {
+  const json = JSON.stringify({ last_updated: new Date().toISOString().split('T')[0], vacancies }, null, 2);
+  const a = document.createElement('a');
+  a.href = 'data:application/json,' + encodeURIComponent(json);
+  a.download = 'vacancies.json';
+  a.click();
+  showAlert('⬇️ vacancies.json download ho gayi!','ok');
+}
+
+function openImport()  { document.getElementById('importModal').classList.add('open'); }
+function closeImport() { document.getElementById('importModal').classList.remove('open'); document.getElementById('importBox').value=''; }
+
+function readFile(e) {
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = ev => document.getElementById('importBox').value = ev.target.result;
+  r.readAsText(f);
+}
+
+function doImport() {
+  try {
+    const data = JSON.parse(document.getElementById('importBox').value.trim());
+    if (!data.vacancies) throw new Error('vacancies key nahi mili');
+    vacancies = data.vacancies;
+    save(); renderAdminAll(); closeImport();
+    showAlert('✅ '+vacancies.length+' vacancies import ho gayi!','ok');
+  } catch(e) { showAlert('❌ JSON galat hai: '+e.message,'err'); }
+}
+
+// ═══════════════════════════════════════
+// ALERT
+// ═══════════════════════════════════════
+function showAlert(msg, type) {
+  const el = document.getElementById('alertBox');
+  el.textContent = msg;
+  el.className = 'alert-box ' + type;
+  setTimeout(() => el.className = 'alert-box', 4000);
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+load();
+purgeExpired();
+renderCards();
+updateStats();
+updateTicker();
+
+// Auto refresh har 5 min
+setInterval(() => {
+  purgeExpired();
+  renderCards();
+  updateStats();
+  updateTicker();
+}, 5 * 60 * 1000);
+</script>
 </body>
 </html>
