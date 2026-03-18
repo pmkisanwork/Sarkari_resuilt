@@ -771,51 +771,52 @@ function saveLocal() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
 }
 
-// Gist se data load karo (har device pe same)
+// Gist se data load karo — Raw URL use karo (no CORS issue)
 async function load() {
-  setGistStatus('⏳ Data load ho raha hai...', '#888');
+  setGistStatus('⏳ Loading...', '#888');
   try {
-    const res = await fetch(GIST_API, {
-      headers: { 'Authorization': `token ${GIST_TOKEN}` }
-    });
-    if (!res.ok) throw new Error('Gist fetch failed');
-    const data = await res.json();
-    const content = data.files[GIST_FILE].content;
-    const parsed = JSON.parse(content);
+    // Raw URL se padhna — koi auth nahi chahiye, CORS bhi nahi
+    const rawUrl = `https://gist.githubusercontent.com/pmkisanwork/${GIST_ID}/raw/${GIST_FILE}?t=${Date.now()}`;
+    const res = await fetch(rawUrl);
+    if (!res.ok) throw new Error('fetch failed');
+    const parsed = await res.json();
     vacancies = parsed.vacancies || [];
-    saveLocal(); // local cache bhi update karo
-    setGistStatus('✅ Synced with cloud', '#06D6A0');
+    saveLocal();
+    setGistStatus('✅ Cloud se sync', '#06D6A0');
   } catch(e) {
     // Fallback: local cache
     const raw = localStorage.getItem(STORAGE_KEY);
     vacancies = raw ? JSON.parse(raw) : [...DEFAULT_DATA];
-    setGistStatus('⚠️ Offline – local data', '#FF6B00');
+    setGistStatus('📱 Local data', '#FF6B00');
   }
 }
 
-// Gist mein save karo (sab devices pe sync)
+// Gist mein save karo
 async function save() {
-  saveLocal(); // pehle local save
+  saveLocal();
+  setGistStatus('⏳ Saving...', '#888');
   try {
-    const body = JSON.stringify({
-      files: {
-        [GIST_FILE]: {
-          content: JSON.stringify({ vacancies }, null, 2)
-        }
-      }
-    });
+    const content = JSON.stringify({ vacancies }, null, 2);
     const res = await fetch(GIST_API, {
       method: 'PATCH',
       headers: {
-        'Authorization': `token ${GIST_TOKEN}`,
-        'Content-Type': 'application/json'
+        'Authorization': `Bearer ${GIST_TOKEN}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
       },
-      body
+      body: JSON.stringify({
+        files: { [GIST_FILE]: { content } }
+      })
     });
-    if (!res.ok) throw new Error('Save failed');
-    setGistStatus('✅ Cloud mein save ho gaya', '#06D6A0');
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || res.status);
+    }
+    setGistStatus('✅ Saved! Sab devices pe sync', '#06D6A0');
   } catch(e) {
-    setGistStatus('⚠️ Cloud save failed – local mein save hua', '#EF4444');
+    setGistStatus('❌ Error: ' + e.message, '#EF4444');
+    console.error('Gist save error:', e);
   }
 }
 
