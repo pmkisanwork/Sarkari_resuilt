@@ -733,11 +733,9 @@ const DEFAULT_ADMIN_PW = 'Shivamgupta$264491';
 const PW_KEY      = 'awor_admin_pw';
 const STORAGE_KEY = 'awor_data';
 
-// ── GitHub Gist Config ──
-const GIST_ID    = '8e1c7929a942c097c28ad89fac353e6b';
-const GIST_TOKEN = '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';
-const GIST_FILE  = 'vacancies.json';
-const GIST_API   = `https://api.github.com/gists/${GIST_ID}`;
+// ── JSONBin.io Config ──
+const BIN_ID  = '69ba7978c3097a1dd536d863';
+const BIN_KEY = '$2a$10$yN0HYHeVAablf.1euvFDXu4CYAyG4E2ta9FQUi7mxFa/Zpp6Z22Va';
 
 // ═══════════════════════════════════════
 // DEFAULT DATA
@@ -763,60 +761,56 @@ let activeCat = 'All';
 let activeTag = 'All';
 
 // ═══════════════════════════════════════
-// STORAGE — GitHub Gist Sync
+// STORAGE — JSONBin.io Sync
 // ═══════════════════════════════════════
 
-// Local cache save
 function saveLocal() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
 }
 
-// Gist se data load karo — Raw URL use karo (no CORS issue)
+// JSONBin se data load karo
 async function load() {
   setGistStatus('⏳ Loading...', '#888');
   try {
-    // Raw URL se padhna — koi auth nahi chahiye, CORS bhi nahi
-    const rawUrl = `https://gist.githubusercontent.com/pmkisanwork/${GIST_ID}/raw/${GIST_FILE}?t=${Date.now()}`;
-    const res = await fetch(rawUrl);
-    if (!res.ok) throw new Error('fetch failed');
-    const parsed = await res.json();
-    vacancies = parsed.vacancies || [];
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+      method: 'GET',
+      headers: {
+        'X-Master-Key': BIN_KEY,
+        'X-Bin-Meta': 'false'
+      }
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    vacancies = (data && data.vacancies) ? data.vacancies : [];
     saveLocal();
     setGistStatus('✅ Cloud se sync', '#06D6A0');
   } catch(e) {
-    // Fallback: local cache
     const raw = localStorage.getItem(STORAGE_KEY);
     vacancies = raw ? JSON.parse(raw) : [...DEFAULT_DATA];
     setGistStatus('📱 Local data', '#FF6B00');
+    console.warn('Load fallback:', e.message);
   }
 }
 
-// Gist mein save karo
+// JSONBin mein save karo
 async function save() {
   saveLocal();
   setGistStatus('⏳ Saving...', '#888');
   try {
-    const content = JSON.stringify({ vacancies }, null, 2);
-    const res = await fetch(GIST_API, {
-      method: 'PATCH',
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      method: 'PUT',
       headers: {
-        'Authorization': `Bearer ${GIST_TOKEN}`,
         'Content-Type': 'application/json',
-        'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
+        'X-Master-Key': BIN_KEY,
+        'X-Bin-Versioning': 'false'
       },
-      body: JSON.stringify({
-        files: { [GIST_FILE]: { content } }
-      })
+      body: JSON.stringify({ vacancies })
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || res.status);
-    }
-    setGistStatus('✅ Saved! Sab devices pe sync', '#06D6A0');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    setGistStatus('✅ Saved! Sab devices sync', '#06D6A0');
   } catch(e) {
-    setGistStatus('❌ Error: ' + e.message, '#EF4444');
-    console.error('Gist save error:', e);
+    setGistStatus('❌ ' + e.message, '#EF4444');
+    console.error('Save error:', e);
   }
 }
 
