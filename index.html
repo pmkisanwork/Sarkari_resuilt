@@ -574,6 +574,7 @@ tr:hover td { background:#FFFBF5; }
       <div class="stat-box"><div class="num" id="a-expired">0</div><div class="lbl">Expired</div></div>
       <div class="stat-box"><div class="num" id="a-closing">0</div><div class="lbl">Closing 7 Days</div></div>
       <div class="stat-box"><div class="num" id="a-hot">0</div><div class="lbl">HOT/NEW</div></div>
+      <div class="stat-box"><div id="gistStatus" style="font-size:13px;font-weight:bold;color:#06D6A0;padding-top:4px;">⏳ Connecting...</div><div class="lbl">Cloud Sync</div></div>
     </div>
 
     <div class="admin-container">
@@ -726,11 +727,17 @@ tr:hover td { background:#FFFBF5; }
 ████████████████████████████████████ -->
 <script>
 // ═══════════════════════════════════════
-// CONFIG — Yahan password change karein
+// CONFIG
 // ═══════════════════════════════════════
 const DEFAULT_ADMIN_PW = 'Shivamgupta$264491';
-const PW_KEY = 'awor_admin_pw';
-const STORAGE_KEY    = 'awor_data';
+const PW_KEY      = 'awor_admin_pw';
+const STORAGE_KEY = 'awor_data';
+
+// ── GitHub Gist Config ──
+const GIST_ID    = '8e1c7929a942c097c28ad89fac353e6b';
+const GIST_TOKEN = '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';
+const GIST_FILE  = 'vacancies.json';
+const GIST_API   = `https://api.github.com/gists/${GIST_ID}`;
 
 // ═══════════════════════════════════════
 // DEFAULT DATA
@@ -756,15 +763,65 @@ let activeCat = 'All';
 let activeTag = 'All';
 
 // ═══════════════════════════════════════
-// STORAGE
+// STORAGE — GitHub Gist Sync
 // ═══════════════════════════════════════
-function load() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  vacancies = raw ? JSON.parse(raw) : [...DEFAULT_DATA];
+
+// Local cache save
+function saveLocal() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
 }
 
-function save() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(vacancies));
+// Gist se data load karo (har device pe same)
+async function load() {
+  setGistStatus('⏳ Data load ho raha hai...', '#888');
+  try {
+    const res = await fetch(GIST_API, {
+      headers: { 'Authorization': `token ${GIST_TOKEN}` }
+    });
+    if (!res.ok) throw new Error('Gist fetch failed');
+    const data = await res.json();
+    const content = data.files[GIST_FILE].content;
+    const parsed = JSON.parse(content);
+    vacancies = parsed.vacancies || [];
+    saveLocal(); // local cache bhi update karo
+    setGistStatus('✅ Synced with cloud', '#06D6A0');
+  } catch(e) {
+    // Fallback: local cache
+    const raw = localStorage.getItem(STORAGE_KEY);
+    vacancies = raw ? JSON.parse(raw) : [...DEFAULT_DATA];
+    setGistStatus('⚠️ Offline – local data', '#FF6B00');
+  }
+}
+
+// Gist mein save karo (sab devices pe sync)
+async function save() {
+  saveLocal(); // pehle local save
+  try {
+    const body = JSON.stringify({
+      files: {
+        [GIST_FILE]: {
+          content: JSON.stringify({ vacancies }, null, 2)
+        }
+      }
+    });
+    const res = await fetch(GIST_API, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `token ${GIST_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body
+    });
+    if (!res.ok) throw new Error('Save failed');
+    setGistStatus('✅ Cloud mein save ho gaya', '#06D6A0');
+  } catch(e) {
+    setGistStatus('⚠️ Cloud save failed – local mein save hua', '#EF4444');
+  }
+}
+
+function setGistStatus(msg, color) {
+  const el = document.getElementById('gistStatus');
+  if (el) { el.textContent = msg; el.style.color = color; }
 }
 
 // ═══════════════════════════════════════
@@ -791,7 +848,9 @@ function showAdmin() {
   const loggedIn = sessionStorage.getItem('awor_admin') === '1';
   document.getElementById('pwScreen').style.display    = loggedIn ? 'none'  : 'flex';
   document.getElementById('adminContent').style.display = loggedIn ? 'block' : 'none';
-  if (loggedIn) { renderAdminAll(); }
+  if (loggedIn) {
+    load().then(() => { purgeExpired(); renderAdminAll(); });
+  }
 }
 
 // ═══════════════════════════════════════
@@ -1027,7 +1086,7 @@ function renderTable() {
 // ═══════════════════════════════════════
 // ADMIN — CRUD
 // ═══════════════════════════════════════
-function saveVacancy() {
+async function saveVacancy() {
   const title = document.getElementById('f-title').value.trim();
   const dept  = document.getElementById('f-dept').value.trim();
   const link  = document.getElementById('f-link').value.trim();
@@ -1049,12 +1108,12 @@ function saveVacancy() {
 
   if (eid) {
     vacancies = vacancies.map(v => v.id===entry.id ? entry : v);
-    showAlert('✅ Vacancy update ho gayi!','ok');
+    showAlert('✅ Vacancy update ho gayi! Saving...','ok');
   } else {
     vacancies.unshift(entry);
-    showAlert('✅ Nai vacancy add ho gayi!','ok');
+    showAlert('✅ Nai vacancy add ho gayi! Saving...','ok');
   }
-  save(); renderAdminAll(); resetForm();
+  await save(); renderAdminAll(); resetForm();
 }
 
 function editV(id) {
@@ -1073,19 +1132,19 @@ function editV(id) {
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function deleteV(id) {
+async function deleteV(id) {
   if (!confirm('Delete karna chahte hain?')) return;
   vacancies = vacancies.filter(v=>v.id!==id);
-  save(); renderAdminAll();
+  await save(); renderAdminAll();
   showAlert('🗑️ Delete ho gaya.','inf');
 }
 
-function removeExpired() {
+async function removeExpired() {
   const today = new Date(); today.setHours(0,0,0,0);
   const before = vacancies.length;
   vacancies = vacancies.filter(v => !v.last_date || new Date(v.last_date)>=today);
   const removed = before - vacancies.length;
-  save(); renderAdminAll();
+  await save(); renderAdminAll();
   showAlert(`🗑️ ${removed} expired vacancies hata di.`, removed>0?'ok':'inf');
 }
 
@@ -1120,12 +1179,12 @@ function readFile(e) {
   r.readAsText(f);
 }
 
-function doImport() {
+async function doImport() {
   try {
     const data = JSON.parse(document.getElementById('importBox').value.trim());
     if (!data.vacancies) throw new Error('vacancies key nahi mili');
     vacancies = data.vacancies;
-    save(); renderAdminAll(); closeImport();
+    await save(); renderAdminAll(); closeImport();
     showAlert('✅ '+vacancies.length+' vacancies import ho gayi!','ok');
   } catch(e) { showAlert('❌ JSON galat hai: '+e.message,'err'); }
 }
@@ -1143,14 +1202,19 @@ function showAlert(msg, type) {
 // ═══════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════
-load();
-purgeExpired();
-renderCards();
-updateStats();
-updateTicker();
+async function init() {
+  await load();
+  purgeExpired();
+  renderCards();
+  updateStats();
+  updateTicker();
+}
 
-// Auto refresh har 5 min
-setInterval(() => {
+init();
+
+// Auto sync har 5 min — Gist se fresh data
+setInterval(async () => {
+  await load();
   purgeExpired();
   renderCards();
   updateStats();
