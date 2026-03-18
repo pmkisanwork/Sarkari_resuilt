@@ -562,6 +562,7 @@ tr:hover td { background:#FFFBF5; }
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <button class="btn btn-g" onclick="exportJSON()">⬇️ Export JSON</button>
         <button class="btn btn-b" onclick="openImport()">📥 Import JSON</button>
+        <button class="btn btn-o" onclick="openChangePw()">🔑 Password Change</button>
         <button class="btn btn-r btn-sm" onclick="adminLogout()">🚪 Logout</button>
         <button class="btn btn-n" onclick="showMain()">🌐 Website</button>
       </div>
@@ -679,6 +680,31 @@ tr:hover td { background:#FFFBF5; }
 </div><!-- end adminPage -->
 
 
+<!-- CHANGE PASSWORD MODAL -->
+<div class="modal-overlay" id="changePwModal">
+  <div class="modal" style="max-width:420px;">
+    <button class="close-x" onclick="closeChangePw()">✕</button>
+    <h2>🔑 Password Change Karein</h2>
+    <div class="alert-box" id="pwChangeAlert"></div>
+    <div class="form-group" style="margin-bottom:14px;">
+      <label>Purana Password</label>
+      <input type="password" id="oldPw" placeholder="Current password" style="width:100%">
+    </div>
+    <div class="form-group" style="margin-bottom:14px;">
+      <label>Naya Password</label>
+      <input type="password" id="newPw" placeholder="New password" style="width:100%">
+    </div>
+    <div class="form-group" style="margin-bottom:18px;">
+      <label>Naya Password Confirm Karein</label>
+      <input type="password" id="confirmPw" placeholder="Repeat new password" style="width:100%">
+    </div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-o" onclick="doChangePw()">✅ Save Password</button>
+      <button class="btn btn-n" onclick="closeChangePw()">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <!-- IMPORT MODAL -->
 <div class="modal-overlay" id="importModal">
   <div class="modal">
@@ -702,7 +728,8 @@ tr:hover td { background:#FFFBF5; }
 // ═══════════════════════════════════════
 // CONFIG — Yahan password change karein
 // ═══════════════════════════════════════
-const ADMIN_PASSWORD = 'admin123';
+const DEFAULT_ADMIN_PW = 'Shivamgupta$264491';
+const PW_KEY = 'awor_admin_pw';
 const STORAGE_KEY    = 'awor_data';
 
 // ═══════════════════════════════════════
@@ -768,11 +795,15 @@ function showAdmin() {
 }
 
 // ═══════════════════════════════════════
-// PASSWORD
+// PASSWORD — localStorage mein save hota hai
 // ═══════════════════════════════════════
+function getAdminPw() {
+  return localStorage.getItem(PW_KEY) || DEFAULT_ADMIN_PW;
+}
+
 function checkPw() {
   const val = document.getElementById('pwInput').value;
-  if (val === ADMIN_PASSWORD) {
+  if (val === getAdminPw()) {
     sessionStorage.setItem('awor_admin', '1');
     document.getElementById('pwScreen').style.display     = 'none';
     document.getElementById('adminContent').style.display = 'block';
@@ -790,6 +821,40 @@ function adminLogout() {
   document.getElementById('pwInput').value = '';
   document.getElementById('adminContent').style.display = 'none';
   document.getElementById('pwScreen').style.display     = 'flex';
+}
+
+function openChangePw() {
+  document.getElementById('oldPw').value = '';
+  document.getElementById('newPw').value = '';
+  document.getElementById('confirmPw').value = '';
+  document.getElementById('pwChangeAlert').className = 'alert-box';
+  document.getElementById('changePwModal').classList.add('open');
+}
+
+function closeChangePw() {
+  document.getElementById('changePwModal').classList.remove('open');
+}
+
+function doChangePw() {
+  const oldVal  = document.getElementById('oldPw').value;
+  const newVal  = document.getElementById('newPw').value.trim();
+  const confVal = document.getElementById('confirmPw').value.trim();
+  const alertEl = document.getElementById('pwChangeAlert');
+
+  function pwAlert(msg, type) {
+    alertEl.textContent = msg;
+    alertEl.className = 'alert-box ' + type;
+    setTimeout(() => alertEl.className = 'alert-box', 4000);
+  }
+
+  if (oldVal !== getAdminPw()) { pwAlert('❌ Purana password galat hai!', 'err'); return; }
+  if (!newVal)                  { pwAlert('⚠️ Naya password khali nahi ho sakta!', 'err'); return; }
+  if (newVal.length < 6)        { pwAlert('⚠️ Password kam se kam 6 characters ka hona chahiye!', 'err'); return; }
+  if (newVal !== confVal)       { pwAlert('❌ Dono naye passwords match nahi kar rahe!', 'err'); return; }
+
+  localStorage.setItem(PW_KEY, newVal);
+  pwAlert('✅ Password successfully change ho gaya!', 'ok');
+  setTimeout(() => closeChangePw(), 1500);
 }
 
 // ═══════════════════════════════════════
